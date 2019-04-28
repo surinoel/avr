@@ -24,17 +24,18 @@ int main(void)
 	stdout = &OUTPUT;
 	stdin = &INPUT;
 
+	int num;
 	while (1) 
     {
-		char c = fgetc(stdin);
-		printf("ch = %c\r\n", c);	
-    }
+		_delay_ms(100);		
+		printf("helloworld\r\n");
+	}
 }
 
 void uart0_init(void) {
 	UBRR0H = 0x00;
 	UBRR0L = 207;
-
+	
 	UCSR0A |= (1<<U2X0);
 	UCSR0C |= 0x06;
 
