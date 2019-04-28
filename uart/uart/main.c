@@ -25,8 +25,7 @@ int main(void)
 	stdin = &INPUT;
 
 	int num;
-	while (1) 
-    {
+	while (1) {
 		_delay_ms(100);		
 		printf("helloworld\r\n");
 	}
