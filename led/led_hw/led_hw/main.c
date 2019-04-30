@@ -25,8 +25,8 @@ int main(void)
 	stdin = &INPUT;
 
 	DDRA = 0xff;
-    while (1) 
-    {
+  	while (1) 
+        {
 		// 1번
 		/*
  		for(int i=1; i<4; i++) {
@@ -87,7 +87,6 @@ int main(void)
 				}
 			}
 		}
-		
-    }
+    	}
 }
 
