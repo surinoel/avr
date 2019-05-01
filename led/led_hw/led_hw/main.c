@@ -24,14 +24,10 @@ int main(void)
 	stdout = &OUTPUT;
 	stdin = &INPUT;
 	DDRA = 0xff;
-<<<<<<< HEAD
 
-    while (1) 
-    {
-=======
   	while (1) 
-        {
->>>>>>> 998bf739a2023494c76f51b616044e47cbbf088b
+    {
+
 		// 1번
 		/*
  		for(int i=1; i<4; i++) {
@@ -92,10 +88,6 @@ int main(void)
 				}
 			}
 		}
-<<<<<<< HEAD
     }
-=======
-    	}
->>>>>>> 998bf739a2023494c76f51b616044e47cbbf088b
 }
 

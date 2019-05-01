@@ -15,9 +15,10 @@ int main(void)
 {
 	DDRA = 0xff;
 	DDRE &= ~((1<<4) | (1<<5));
-	
+
 	int idx = 0;
-    
+    int count = 0;
+
 	while (1) 
     {	
 		/*
@@ -28,7 +29,7 @@ int main(void)
 			PORTA = 0x00;
 		}
 		*/
-		/*
+		
 		if((PINE & (1<<4)) == 0x00) {
 			_delay_ms(20);
 			if(++idx==8) idx = 0;
@@ -41,7 +42,18 @@ int main(void)
 			PORTA = pattern[idx];
 			while((PINE & (1<<5)) == 0x00);
 		}
+		
+		/* 
+		if((PINE & (1<<4)) == 0x00) {
+			if(++count==50) count = 0;
+			PORTA = (1<<count);
+		}
+		else if((PINE & (1<<4)) == 0x00) {
+			if(--count==-1) count = 49;
+			PORTA = (1<<count);
+		}
 		*/
-    }
+		
+	}
 }
 
