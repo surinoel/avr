@@ -6,8 +6,8 @@
  */ 
 
 #define F_CPU 16000000UL
-#include <string.h>
 #include <util/delay.h>
+#include <string.h>
 #include <stdio.h>
 #include "uart.h"
 
@@ -23,8 +23,8 @@ int main(void)
 	uart0_init();
 	stdout = &OUTPUT;
 	stdin = &INPUT;
-
 	DDRA = 0xff;
+
     while (1) 
     {
 		// 1번
@@ -62,7 +62,7 @@ int main(void)
 				_delay_ms(200);
 			}
 		}
-		*/	
+		*/		
 		// 4번
 		
 		PORTA = 0x00;
@@ -87,7 +87,6 @@ int main(void)
 				}
 			}
 		}
-		
     }
 }
 

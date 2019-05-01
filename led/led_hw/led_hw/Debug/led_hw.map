@@ -531,11 +531,11 @@ END GROUP
  .debug_abbrev  0x00000718      0x22c main.o
  .debug_abbrev  0x00000944       0x94 uart.o
 
-.debug_line     0x00000000      0x43a
+.debug_line     0x00000000      0x438
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x169 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega128a/avr51/crtatmega128a.o
  .debug_line    0x00000169      0x1d2 main.o
- .debug_line    0x0000033b       0xff uart.o
+ .debug_line    0x0000033b       0xfd uart.o
 
 .debug_frame    0x00000000       0x78
  *(.debug_frame)

@@ -19,7 +19,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   7 .debug_abbrev 000009d8  00000000  00000000  0000163e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   0000043a  00000000  00000000  00002016  2**0
+  8 .debug_line   00000438  00000000  00000000  00002016  2**0
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  00000078  00000000  00000000  00002450  2**2
                   CONTENTS, READONLY, DEBUGGING
@@ -174,12 +174,11 @@ int main(void)
   e4:	91 e0       	ldi	r25, 0x01	; 1
   e6:	91 83       	std	Z+1, r25	; 0x01
   e8:	80 83       	st	Z, r24
-
 	DDRA = 0xff;
   ea:	8f ef       	ldi	r24, 0xFF	; 255
   ec:	8a bb       	out	0x1a, r24	; 26
 		}
-		*/	
+		*/		
 		// 4번
 		
 		PORTA = 0x00;
@@ -202,7 +201,7 @@ int main(void)
  100:	d0 e0       	ldi	r29, 0x00	; 0
 			}
 		}
-		*/	
+		*/		
 		// 4번
 		
 		PORTA = 0x00;
@@ -348,9 +347,9 @@ int main(void)
  1b8:	a4 cf       	rjmp	.-184    	; 0x102 <main+0x2e>
 
 000001ba <uart0_init>:
+ *  Author: yeong
  */ 
- 
- #include "uart.h"
+#include "uart.h"
 
  void uart0_init(void) {
 	 UBRR0H = 0x00;
