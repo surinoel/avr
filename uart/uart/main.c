@@ -5,7 +5,7 @@
  * Author : 유영재
  */ 
 #define F_CPU 16000000UL
-#include <avr/io.h>
+#include <avr/io.h> 
 #include <util/delay.h>
 #include <stdio.h>
 
@@ -24,10 +24,9 @@ int main(void)
 	stdout = &OUTPUT;
 	stdin = &INPUT;
 
-	int num;
 	while (1) {
 		_delay_ms(100);		
-		printf("helloworld\r\n");
+		printf("hello world\r\n");
 	}
 }
 

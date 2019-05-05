@@ -177,10 +177,10 @@ int main(void)
 	DDRA = 0xff;
   ea:	8f ef       	ldi	r24, 0xFF	; 255
   ec:	8a bb       	out	0x1a, r24	; 26
+			}
 		}
-		*/		
+		*/
 		// 4번
-		
 		PORTA = 0x00;
 		scanf("%s", buf);
   ee:	0a e2       	ldi	r16, 0x2A	; 42
@@ -199,11 +199,11 @@ int main(void)
 					PORTA = prev | tmp;
   fe:	c1 e0       	ldi	r28, 0x01	; 1
  100:	d0 e0       	ldi	r29, 0x00	; 0
+				_delay_ms(200);
 			}
 		}
-		*/		
+		*/
 		// 4번
-		
 		PORTA = 0x00;
  102:	1b ba       	out	0x1b, r1	; 27
 		scanf("%s", buf);
@@ -272,8 +272,8 @@ int main(void)
  15c:	97 07       	cpc	r25, r23
  15e:	51 f7       	brne	.-44     	; 0x134 <main+0x60>
  160:	31 97       	sbiw	r30, 0x01	; 1
+		*/
 		// 4번
-		
 		PORTA = 0x00;
 		scanf("%s", buf);
 		if(!strcmp(buf, "right")) {

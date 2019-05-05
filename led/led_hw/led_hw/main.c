@@ -27,17 +27,16 @@ int main(void)
 
   	while (1) 
     {
-
+		SFIOR
 		// 1번
 		/*
  		for(int i=1; i<4; i++) {
 			PORTA = (1<<(3-i)) | (1<<(4+i));
 			_delay_ms(1000);
 		}
-
 		for(int i=1; i<4; i++) {
 			PORTA = (1<<i) | (1<<(7-i));
-			_delay_ms(1000);  
+			_delay_ms(1000);
 		}
 		*/		
 		// 2번
@@ -58,14 +57,13 @@ int main(void)
 		for(int i=0; i<8; i++) {
 			uint8_t prev = PORTA;
 			for(int j=7; j>=i; j--) {
-				uint8_t tmp = (1<<j);
-				PORTA = prev | tmp;
+				PORTA = prev | (1<<j);
 				_delay_ms(200);
 			}
 		}
-		*/		
+		*/
 		// 4번
-		
+		/*
 		PORTA = 0x00;
 		scanf("%s", buf);
 		if(!strcmp(buf, "right")) {
@@ -88,6 +86,7 @@ int main(void)
 				}
 			}
 		}
+		*/
     }
 }
 
