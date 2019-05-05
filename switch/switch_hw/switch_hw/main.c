@@ -180,10 +180,10 @@ int main(void)
 	DDRB &= ~((1<<4) | (1<<5));
 	PORTB |= ((1<<4) | (1<<5));
 
-    while (1) 
-    {
+	while (1) 
+	{
 		PORTA = 0x00;
 		solve2();
-    }
+	}
 }
 
