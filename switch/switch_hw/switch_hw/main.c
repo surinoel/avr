@@ -5,7 +5,6 @@
  * Author : yeong
  */ 
 
-
 #include "uart.h"
 #include "solution.h"
 
@@ -34,15 +33,4 @@ void init(void) {
 	DDRA = 0xff;
 	DDRB &= ~((1<<4) | (1<<5));
 	PORTB |= ((1<<4) | (1<<5));
-<<<<<<< HEAD
 }
-=======
-
-	while (1) 
-	{
-		PORTA = 0x00;
-		solve2();
-	}
-}
-
->>>>>>> f708d24c929fb53fce7b9afcec0cbbfa049367e7

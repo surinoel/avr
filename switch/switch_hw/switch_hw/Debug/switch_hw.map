@@ -72,7 +72,7 @@ Discarded input sections
  .text          0x00000000        0x0 solution.o
  .data          0x00000000        0x0 solution.o
  .bss           0x00000000        0x0 solution.o
- .text.solve1   0x00000000       0xfc solution.o
+ .text.solve1   0x00000000      0x120 solution.o
  .text.solve3   0x00000000       0xb0 solution.o
  .data.pattern  0x00000000        0x8 solution.o
  .text          0x00000000        0x0 uart.o
@@ -743,13 +743,13 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1340
+.debug_info     0x00000000     0x13b2
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x780 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega128a/avr51/crtatmega128a.o
  .debug_info    0x00000780      0x22a main.o
  .debug_info    0x000009aa      0x200 queue.o
- .debug_info    0x00000baa      0x6ca solution.o
- .debug_info    0x00001274       0xcc uart.o
+ .debug_info    0x00000baa      0x73c solution.o
+ .debug_info    0x000012e6       0xcc uart.o
 
 .debug_abbrev   0x00000000      0xc1c
  *(.debug_abbrev)
@@ -759,13 +759,13 @@ END GROUP
  .debug_abbrev  0x000009aa      0x1de solution.o
  .debug_abbrev  0x00000b88       0x94 uart.o
 
-.debug_line     0x00000000      0x918
+.debug_line     0x00000000      0x930
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x169 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega128a/avr51/crtatmega128a.o
  .debug_line    0x00000169      0x11e main.o
  .debug_line    0x00000287      0x142 queue.o
- .debug_line    0x000003c9      0x452 solution.o
- .debug_line    0x0000081b       0xfd uart.o
+ .debug_line    0x000003c9      0x46a solution.o
+ .debug_line    0x00000833       0xfd uart.o
 
 .debug_frame    0x00000000      0x1f4
  *(.debug_frame)
@@ -786,10 +786,10 @@ END GROUP
  .debug_str     0x000004e5       0x29 uart.o
                                 0x18d (size before relaxing)
 
-.debug_loc      0x00000000      0x8c7
+.debug_loc      0x00000000      0x957
  *(.debug_loc)
  .debug_loc     0x00000000       0xca queue.o
- .debug_loc     0x000000ca      0x7fd solution.o
+ .debug_loc     0x000000ca      0x88d solution.o
 
 .debug_macinfo
  *(.debug_macinfo)

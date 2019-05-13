@@ -25,17 +25,19 @@ void solve1(void) {
 			break;
 		}
 
-		if(!(PINB & (1<<4))) {
-			_delay_ms(200);
+		if(!(PINB & (1<<4))) { 
+			_delay_ms(20);
 			num += 1;
 			printf("num = %d\r\n", num);
 			while(!(PINB & (1<<4)));
+			_delay_ms(20); 
 		}
 		else if(!(PINB & (1<<5))) {
-			_delay_ms(200);
+			_delay_ms(20);
 			num += 2;
 			printf("num = %d\r\n", num);
 			while(!(PINB & (1<<5)));
+			_delay_ms(20);
 		}
 	}
 }
