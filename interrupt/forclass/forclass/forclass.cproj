@@ -142,6 +142,12 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="solution.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="solution.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="uart0.c">
       <SubType>compile</SubType>
     </Compile>

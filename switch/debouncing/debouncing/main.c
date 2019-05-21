@@ -19,7 +19,6 @@ int main(void)
 		if(!(PINB & (1<<4))) {
 			PORTA ^= 0xff;
 		}
-		_delay_ms(10);
     }
 }
 
