@@ -23,8 +23,9 @@ int main(void)
     {
 		print_adc_value(adc_read());
 		if(flag) {
-			cur_ch = 2 ? cur_ch == 1 : cur_ch == 2;
+			cur_ch = cur_ch == 0 ? 1 : 0;
 			adc_change_channel(cur_ch);
+			flag = 0;
 		}
     }
 }
