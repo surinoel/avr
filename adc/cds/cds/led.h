@@ -13,6 +13,6 @@
 #include "uart.h"
 
 void led_init(void);
-void cds_led_on(unsigned char adc_read_val);
+void cds_led_on(int adc_read_val);
 
 #endif /* LED_H_ */

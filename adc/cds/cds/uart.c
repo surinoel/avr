@@ -17,6 +17,9 @@ FILE INPUT = FDEV_SETUP_STREAM(uart0_receive, NULL, _FDEV_SETUP_READ);
 	 UCSR0C |= 0x06;
 
 	 UCSR0B |= (1<<RXEN0) | (1<<TXEN0);
+
+	 stdin = &INPUT;
+	 stdout = &OUTPUT;
  }
 
  void uart0_trasnmit(char data) {
