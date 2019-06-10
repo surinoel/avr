@@ -4,13 +4,16 @@
  * Created: 2019-06-09 오후 3:27:09
  * Author : yeong
  */ 
+
 #define F_CPU 16000000UL
+#include <stdlib.h>
 #include <util/delay.h>
 #include <avr/io.h>
 #include "timer.h"
 
 int main(void)
 {
+	rand
     // timer1_pwm_init();
 	buzzer_init();
     while (1) 

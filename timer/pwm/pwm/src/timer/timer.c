@@ -32,7 +32,7 @@
  void buzzer_init(void)
  {
 	DDRB |= (1<<4);
-	TCCR0 |= (1<<2);
+	TCCR0 |= (1<<CS01) | (1<<CS00);
 	TIMSK |= (1<<TOIE0);
 
 	sei();
