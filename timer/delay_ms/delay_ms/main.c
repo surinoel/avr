@@ -11,6 +11,8 @@
 int main(void)
 {
 	led_init();	
+	timer0_ovf_init();
+
     while (1) 
     {
 		led_blink(1000);

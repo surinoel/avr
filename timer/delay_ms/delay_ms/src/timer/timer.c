@@ -11,20 +11,20 @@
  
  ISR(TIMER0_OVF_vect) {
 	timer0_millis += 1;	
+	TCNT0 = 6;
  }
 
  void timer0_ovf_init(void) {
-	TCCR0 |= (1<<CS02);
 	TIMSK |= (1<<TOIE0);
-	sei();
  }
 
+
  void delay_ms(int mstime) {
-	timer0_ovf_init();
 	timer0_millis = 0;
-	TCNT0 = 5;
+	TCNT0 = 6;
+	TCCR0 |= (1<<CS02);
 	
 	while(mstime - timer0_millis > 0);
 
-	cli();
+	TCCR0 &= ~(1<<CS02);
 }
