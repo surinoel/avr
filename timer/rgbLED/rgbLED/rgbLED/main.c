@@ -12,6 +12,7 @@
 #define F_CPU 16000000UL
 #include <util/delay.h>
 
+uint8_t *ocr[3] = {&OCR3A, &OCR3B, &OCR3C}; 
 bool check[3];
 
 int main(void)
@@ -29,9 +30,7 @@ int main(void)
 			for(int j=0; j<=1000; j++) {
 				for(int k=0; k<3; k++) {
 					if(check[k]) {
-						if(k==0) OCR3A = j;
-						else if(k==1) OCR3B = j;
-						else OCR3C = j;
+						ocr[k] = j;
 					}	
 				}
 				_delay_ms(1);
