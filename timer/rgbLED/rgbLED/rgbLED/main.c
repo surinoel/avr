@@ -17,8 +17,8 @@ bool check[3];
 int main(void)
 {
 	timer3_pwm_init();
-    while (1) 
-    {
+	while (1) 
+	{
 		for(int i=1; i<(1<<3); i++) {
 			memset(check, 0, sizeof(check));
 			for(int j=0; j<3; j++) {
@@ -35,7 +35,7 @@ int main(void)
 					}	
 				}
 				_delay_ms(1);
-			}
+			}	
 		}
-    }
+	}
 }
