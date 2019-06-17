@@ -11,7 +11,7 @@
 int main(void)
 {
 	uart0_init();
-	adc_init(2);
+	adc_init(1);
 		
     while (1) 
     {

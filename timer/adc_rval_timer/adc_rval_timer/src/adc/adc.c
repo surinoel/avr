@@ -7,8 +7,8 @@
 #include "adc.h"
 
 void adc_init(unsigned int ch) {
-	// ADMUX |= (1<<REFS0);
-	ADMUX = ((ADMUX & 0xE0) | ch);
+	ADMUX |= (1<<REFS0);
+	ADMUX |= ((ADMUX & 0xE0) | ch);
 
 	ADCSRA |= 0x07;
 	ADCSRA |= (1<<ADEN) | (1<<ADFR) | (1<<ADSC);
@@ -20,7 +20,7 @@ int adc_read(void) {
 }
 
 void print_adc_value(int adc_value) {
-	printf("%d\n", *(&ADMUX));
+	// printf("%d\n", *(&ADMUX));
 	printf("adc_value : %d\r\n", adc_value);
 	_delay_ms(500);
 }
