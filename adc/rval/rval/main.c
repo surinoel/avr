@@ -23,8 +23,8 @@ int main(void)
 	stdin = &INPUT;
 	stdout = &OUTPUT;
 	int read = 0; 
-	int_init();
-	led_init();
+	// int_init();
+	// led_init();
 	uart0_init();
 	adc_init(ch); // can read ADC channel
 
@@ -34,11 +34,11 @@ int main(void)
 		printf("adc_value : %d\r\n", read);
 		_delay_ms(1000);
 
-		if(flag) {
-			ch = (ch + 1) % 2;
-			adc_change_channel(ch);
-			flag = 0;
-		}
+		//if(flag) {
+			//ch = (ch + 1) % 2;
+			//adc_change_channel(ch);
+			//flag = 0;
+		//}
     }
 }
 
