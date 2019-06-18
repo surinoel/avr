@@ -14,8 +14,6 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-void timer1_pwm_init(void);
-void buzzer_init(void);
 void buzzer_downVOL_init(void);
 
 #endif /* TIME_H_ */

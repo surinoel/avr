@@ -13,43 +13,17 @@
  };
 
  volatile int state, tone;
- char f_table[8] = {17, 43, 66, 77, 97, 114, 117, 137};
+ uint16_t f_table[8] = {15926, 13628, 12139, 11461, 10210, 9090, 8101, 7644};
  int song[] = {SOL, MI, MI, SOL, MI, DO, RE, MI, RE, DO, MI, SOL, DDO, SOL, DDO, SOL, DDO, SOL, MI, SOL, RE, FA, MI, RE, DO, EOS};
  
- ISR(TIMER0_OVF_vect)
- {
-	if(state == 0) {
-		PORTB |= (1<<4);
-		state = 1;
-	}
-	else {
-		PORTB &= ~(1<<4);
-		state = 0;
-	}
-	TCNT0 = f_table[tone];
- }
-
- void buzzer_init(void)
- {
-	DDRB |= (1<<4);
-	TCCR0 = (1<<CS01) | (1<<CS00);
-	TIMSK = (1<<TOIE0);
-
-	sei();
-	for(int i=0; song[i] != EOS; i++) {
-		tone = song[i];
-		_delay_ms(300);
-	}
-	cli();
- }
-
  void buzzer_downVOL_init(void) {
-	DDRB |= (1<<4);
-	TCCR0 = (1<<CS02);
-	TCCR0 |= (1<<WGM01) | (1<<WGM00) | (1<<COM01);
+	DDRE |= (1<<3);
+	TCCR3A |= (1<<COM3A1) | (1<<WGM31);
+	TCCR3B |= (1<<WGM33) | (1<<WGM32) | (1<<CS10);
 
 	for(int i=0; song[i] != EOS; i++) {
-		OCR0 = (256 - f_table[song[i]]) * 0.3 + f_table[song[i]];
-		_delay_ms(300);
+		ICR3 = f_table[song[i]];
+		OCR3A = f_table[song[i]] * 0.7;
+		_delay_ms(500);
 	}
  }

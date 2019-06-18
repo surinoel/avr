@@ -11,7 +11,6 @@ int main(void)
 {
 	while (1) 
     {
-		// buzzer_init();
 		buzzer_downVOL_init();
     }
 }

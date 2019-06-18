@@ -11,6 +11,6 @@
 
 #include <avr/io.h>
 
-void timer3_pwm_init(void);
+void timer1_pwm_init(void);
 
 #endif /* TIMER_H_ */

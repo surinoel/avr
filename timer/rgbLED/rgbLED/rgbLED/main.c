@@ -18,7 +18,7 @@ bool check[3];
 int main(void)
 {
 	uart0_init();
-	timer3_pwm_init();
+	timer1_pwm_init();
 	while (1) 
 	{	
 		for(int i=1; i<(1<<3); i++) {
