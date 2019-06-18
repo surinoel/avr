@@ -8,9 +8,9 @@
 
  void timer3_pwm_init(void) 
  {
-	DDRE |= (1<<PORTE3) | (1<<PORTE4) | (1<<PORTE5);
-	TCCR3A |= (1<<COM3A1) | (1<<WGM31);
-	TCCR3B |= (1<<WGM33) | (1<<WGM32) | (1<<CS12) | (1<<CS10);
+	DDRB |= (1<<PORTB5) | (1<<PORTB6) | (1<<PORTB7);
+	TCCR1A |= (1<<COM1A1) | (1<<COM1B1) | (1<<COM1C1) | (1<<WGM11);
+	TCCR1B |= (1<<WGM13) | (1<<WGM12) | (1<<CS11);
 
-	ICR3 = 1000;
+	ICR1 = 1000;
  }

@@ -6,3 +6,5 @@ main.c
 
 src\timer\timer.c
 
+src\uart\uart.c
+

@@ -4,7 +4,7 @@
  * Created: 2019-06-15 오후 2:44:20
  * Author : yeong
  */ 
-
+#include "uart.h"
 #include "timer.h"
 #include <string.h>
 #include <stdbool.h>
@@ -12,16 +12,18 @@
 #define F_CPU 16000000UL
 #include <util/delay.h>
 
-uint8_t *ocr[3] = {&OCR3A, &OCR3B, &OCR3C}; 
+volatile uint16_t* ocr[3] = {&OCR1A, &OCR1B, &OCR1C}; 
 bool check[3];
 
 int main(void)
 {
+	uart0_init();
 	timer3_pwm_init();
 	while (1) 
-	{
+	{	
 		for(int i=1; i<(1<<3); i++) {
-			memset(check, 0, sizeof(check));
+			memset(check, false, sizeof(check));
+			 *(ocr[0]) = *(ocr[1]) = *(ocr[2]) = 0;
 			for(int j=0; j<3; j++) {
 				if(i & (1<<j)) {
 					check[j] = true;			
@@ -30,11 +32,13 @@ int main(void)
 			for(int j=0; j<=1000; j++) {
 				for(int k=0; k<3; k++) {
 					if(check[k]) {
-						ocr[k] = j;
-					}	
+						*(ocr[k]) = j;
+					}
 				}
-				_delay_ms(1);
+				// printf("%d %d %d\r\n", *(ocr[0]), *(ocr[1]), *(ocr[2]));
+				_delay_ms(2);
 			}	
 		}
+		
 	}
 }
