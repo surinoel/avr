@@ -12,7 +12,6 @@
 	DO, RE, MI, FA, SOL, RA, SI, DDO
  };
 
- volatile int state, tone;
  uint16_t f_table[8] = {15926, 13628, 12139, 11461, 10210, 9090, 8101, 7644};
  int song[] = {SOL, MI, MI, SOL, MI, DO, RE, MI, RE, DO, MI, SOL, DDO, SOL, DDO, SOL, DDO, SOL, MI, SOL, RE, FA, MI, RE, DO, EOS};
  
