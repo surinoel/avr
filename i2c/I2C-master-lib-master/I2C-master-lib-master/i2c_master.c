@@ -1,13 +1,12 @@
-﻿/*
- * i2c.c
- *
- * Created: 2019-06-16 오후 4:32:01
- *  Author: yeong
- */ 
+#ifndef  F_CPU
+#define F_CPU 16000000UL
+#endif
 
-#include "i2c.h"
+#include <avr/io.h>
+#include <util/twi.h>
 
-#define F_CPU 16000000UL // CLK frequency
+#include "i2c_master.h"
+
 #define F_SCL 100000UL // SCL frequency
 #define Prescaler 1
 #define TWBR_val ((((F_CPU / F_SCL) / Prescaler) - 16 ) / 2)
@@ -21,7 +20,7 @@ uint8_t i2c_start(uint8_t address)
 {
 	// reset TWI control register
 	TWCR = 0;
-	// transmit START condition
+	// transmit START condition 
 	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
 	// wait for end of transmission
 	while( !(TWCR & (1<<TWINT)) );
@@ -59,8 +58,9 @@ uint8_t i2c_write(uint8_t data)
 
 uint8_t i2c_read_ack(void)
 {
+	
 	// start TWI module and acknowledge data after reception
-	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA);
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA); 
 	// wait for end of transmission
 	while( !(TWCR & (1<<TWINT)) );
 	// return received data from TWDR
@@ -69,6 +69,7 @@ uint8_t i2c_read_ack(void)
 
 uint8_t i2c_read_nack(void)
 {
+	
 	// start receiving without acknowledging reception
 	TWCR = (1<<TWINT) | (1<<TWEN);
 	// wait for end of transmission
@@ -122,16 +123,19 @@ uint8_t i2c_writeReg(uint8_t devaddr, uint8_t regaddr, uint8_t* data, uint16_t l
 	return 0;
 }
 
-uint8_t i2c_readReg(uint8_t devaddr, uint8_t regaddr, uint8_t* Hbyte, uint8_t* Lbyte)
+uint8_t i2c_readReg(uint8_t devaddr, uint8_t regaddr, uint8_t* data, uint16_t length)
 {
 	if (i2c_start(devaddr)) return 1;
 
 	i2c_write(regaddr);
 
-	if (i2c_start(devaddr | I2C_READ)) return 1;
+	if (i2c_start(devaddr | 0x01)) return 1;
 
-	Hbyte = i2c_read_ack();
-	Lbyte = i2c_read_ack();
+	for (uint16_t i = 0; i < (length-1); i++)
+	{
+		data[i] = i2c_read_ack();
+	}
+	data[(length-1)] = i2c_read_nack();
 
 	i2c_stop();
 
