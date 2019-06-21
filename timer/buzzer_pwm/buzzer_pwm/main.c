@@ -10,8 +10,8 @@
 int main(void)
 {
 	while (1) 
-    {
+    	{
 		buzzer_downVOL_init();
-    }
+    	}
 }
 
