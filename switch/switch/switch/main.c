@@ -17,10 +17,10 @@ int main(void)
 	DDRE &= ~((1<<4) | (1<<5));
 
 	int idx = 0;
-    int count = 0;
+    	int count = 0;
 
 	while (1) 
-    {	
+    	{	
 		/*
 		if((PINE & (1<<4)) == 0x00) {
 			PORTA = 0xff;	
