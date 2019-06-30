@@ -19,9 +19,9 @@ int main(void)
 	timer3_pwm_init();
 	switch_exti_init();
 
-    while (1) 
-    {
+	while (1) 
+	{
 
-    }
+	}
 }
 
