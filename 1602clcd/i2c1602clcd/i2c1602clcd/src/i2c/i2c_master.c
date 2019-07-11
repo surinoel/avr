@@ -1,6 +1,4 @@
-#ifndef  F_CPU
 #define F_CPU 16000000UL
-#endif
 
 #include <avr/io.h>
 #include <util/twi.h>
@@ -14,8 +12,8 @@
 
 void i2c_init(void)
 {
-	PORTD |= (1<<0) | (1<<1);
-	SFIOR &= ~(1<<PUD);
+	// PORTD |= (1<<0) | (1<<1);
+	// SFIOR &= ~(1<<PUD);
 	TWBR = (uint8_t)TWBR_val;
 }
 
@@ -85,6 +83,7 @@ uint8_t i2c_transmit(uint8_t address, uint8_t* data, uint16_t length)
 	for (uint16_t i = 0; i < length; i++)
 	{
 		if (i2c_write(data[i])) return 1;
+		_delay_ms(1);
 	}
 	
 	i2c_stop();

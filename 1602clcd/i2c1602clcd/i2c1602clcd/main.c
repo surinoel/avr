@@ -14,8 +14,8 @@ int main(void)
 	uart0_init();
 	i2c_lcd_init();
 	
-	char str0[] = "PCF8574 I2C CLCD";
-	char str1[] = "ATmega128";
+	char str0[16] = "PCF8574 I2C CLCD";
+	char str1[16] = "ATmega128";
 	
 	printf("Before string transfer....\r\n");
 	i2c_lcd_string(0, 0, str0);
@@ -24,6 +24,6 @@ int main(void)
 	
 	while(1)
 	{
-	
+		
 	}
 }
