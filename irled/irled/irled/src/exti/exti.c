@@ -10,10 +10,10 @@
 volatile int bcnt;
 volatile unsigned long receiveData;
 
-ISR(INT3_vect)
+ISR(INT0_vect)
 {
 	int tcnt = TCNT0;
-	int isOVF = TIFR & (1<<TOV3);
+	int isOVF = TIFR & (1<<TOV0);
 	
 	// if(isOVF == 1) goto end;
 	
@@ -49,23 +49,21 @@ ISR(INT3_vect)
 		}
 	}
 	
-// end:
-	printf("hello\r\n");
 	TCNT0 = 0;
-	TIFR |= (1<<TOV3);	
+	TIFR |= (1<<TOV0);	
 }
 
 void exti_init(void)
 {
-	EICRA |= (1<<ISC31);
-	EIMSK |= (1<<INT3);
+	EIMSK |= (1<<INT0);
+	EICRA |= (1<<ISC01);
 	sei();
 }
 
 void print_receive_data(int repeat)
 {
 	if(repeat == 1) {
-		printf("  Repeat... \r\n");
+		printf("Repeat... \r\n");
 	}
 	else {
 		printf("0x%lX\r\n", receiveData);

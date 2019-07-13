@@ -15,7 +15,6 @@ int main(void)
 {
     uart0_init();
 	TCCR0 |= (1<<CS00) | (1<<CS01) | (1<<CS02);
-	printf("start........\r\n");
 	exti_init();
 	bcnt = 32;
     while (1) 
