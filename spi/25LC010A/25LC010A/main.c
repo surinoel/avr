@@ -1,13 +1,9 @@
 /*
- * spi_intro.c
+ * 25LC010A.c
  *
- * Created: 2019-06-27 오후 11:38:20
+ * Created: 2019-07-13 오후 8:58:47
  * Author : yeong
  */ 
-
-#if 0
-
-#endif
 
 #include <avr/io.h>
 
