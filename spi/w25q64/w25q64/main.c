@@ -28,13 +28,13 @@ int main(void)
 	{
 		uint8_t man_id = w25q_read_manufacturer_id();
 		w25q_ss_pin_drive(LOGIC_LOW);
-		spi_transmit(man_id);
+		//spi_transmit(man_id);
 		w25q_ss_pin_drive(LOGIC_HIGH);
 		_delay_ms(1);
 		printf("manID:0x%X\r\n", man_id);
 		uint8_t dev_id = w25q_read_device_id();
 		w25q_ss_pin_drive(LOGIC_LOW);
-		spi_transmit(dev_id);
+		//spi_transmit(dev_id);
 		w25q_ss_pin_drive(LOGIC_HIGH);
 		printf("devID:0x%X\r\n", dev_id);
 		_delay_ms(5);
