@@ -20,15 +20,14 @@ int main(void)
 	float volt, dist;
 	uart0_init();
 	adc_init(0x01);
-    /* Replace with your application code */
-    while (1) 
-    {
+	/* Replace with your application code */
+	while (1) 
+	{
 		volt = 5.0*adc_read()/1024;
 		// printf("voltage:%f\r\n", 5.0*adc_read()/1024);
 		dist = calc_distance(volt);
 		if(dist>=10 && dist<=80) {
 			printf("dist:%f\r\n", dist);
 		}
-    }
+	}
 }
-
