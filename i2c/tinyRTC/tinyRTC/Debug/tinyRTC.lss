@@ -156,9 +156,9 @@ int main(void)
   c8:	7c d1       	rcall	.+760    	; 0x3c2 <uart0_init>
 	tinyRTC_init();
   ca:	9c d0       	rcall	.+312    	; 0x204 <tinyRTC_init>
-	// tinyRTC_read_date();
-	// _delay_ms(2000);
-	// tinyRTC_read_date();
+	//tinyRTC_read_date();
+	//_delay_ms(2000);
+	//tinyRTC_read_date();
     while (1) 
     {
 		tinyRTC_read_date();

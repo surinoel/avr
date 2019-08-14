@@ -14,14 +14,14 @@ int main(void)
 	uart0_init();
 	tinyRTC_init();
     /* Replace with your application code */ 
-	tinyRTC_setup(00, 10, 17, 1, 11, 8, 19);
-	tinyRTC_set_date();
-	tinyRTC_read_date();
-	_delay_ms(2000);
-	tinyRTC_read_date();
+	//tinyRTC_setup(00, 33, 18, 1, 11, 8, 19);
+	//tinyRTC_set_date();
+	//tinyRTC_read_date();
+	//_delay_ms(2000);
+	//tinyRTC_read_date();
     while (1) 
     {
-		// tinyRTC_read_date();
+		tinyRTC_read_date();
     }
 }
 
