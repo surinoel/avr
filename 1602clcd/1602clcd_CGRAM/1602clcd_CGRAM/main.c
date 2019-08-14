@@ -23,8 +23,8 @@ int main(void)
 	i2c_lcd_data(0);
 	i2c_lcd_data(1);
 
-    while (1) 
-    {
-		
-    }
+	while (1) 
+	{
+
+	}
 }
