@@ -14,9 +14,9 @@ int main(void)
 	uart0_init();
 	hcsr04_init();
 
-    while (1) 
-    {
+	while (1) 
+	{
 		trg_pulse();
 		_delay_ms(60);	
-    }
+	}
 }
