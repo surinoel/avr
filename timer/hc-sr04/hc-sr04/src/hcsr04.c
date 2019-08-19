@@ -16,6 +16,7 @@
 	if(toggle == 0) {
 		toggle = 1;
 		distance = 0;
+		TCNT1 = 0;
 		TCCR1B |= (1<<CS10);
 	}
 	else {
@@ -36,6 +37,7 @@
 	EICRB |= (1<<ISC40);
 	EIMSK |= (1<<4);
 	TCCR1B |= (1<<WGM13) | (1<<WGM12);
+	TIMSK |= (1<<OCIE1A);
 	ICR1 = 927;
 	toggle = 0;
 	distance = 0;
